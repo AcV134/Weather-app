@@ -26,12 +26,14 @@ $("#options").on('click',(e)=>{
 })
 
 $("#form").on("submit", async function(event) {
-    event.preventDefault(); // Prevent the default form submission behavior
+    event.preventDefault(); 
     try{
         const result = await axios.post('/search',{
             latitude: latitude,
             longitude: longitude
         })
+
+        window.location.href = '/';
     }catch(error){
         console.error(error);
     }
