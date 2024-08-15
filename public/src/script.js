@@ -19,22 +19,8 @@ $("#location").on("input", async function(event) {
 
 $("#options").on('click',(e)=>{
     let values = e.target.value.split(" ");
-    latitude = values[0];
-    longitude = values[1];
+    $("#latitude").val(values[0]);
+    $("#longitude").val(values[1]);
     $("#location").val(e.target.innerHTML);
     $("#options").empty();
 })
-
-$("#form").on("submit", async function(event) {
-    event.preventDefault(); 
-    try{
-        const result = await axios.post('/search',{
-            latitude: latitude,
-            longitude: longitude
-        })
-
-        window.location.href = '/';
-    }catch(error){
-        console.error(error);
-    }
-});
