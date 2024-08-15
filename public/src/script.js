@@ -24,3 +24,16 @@ $("#options").on('click',(e)=>{
     $("#location").val(e.target.innerHTML);
     $("#options").empty();
 })
+
+$('.dailyClick').on('click',(e)=>{
+    console.log($(e.target).index());
+    let index = $(e.target).index();
+    let container = ($('.hour-container').children())[index];
+    if($(container).hasClass('on')){
+        $(container).removeClass('on');
+    }
+    else{
+        $('.hour').siblings().removeClass('on');
+        $(container).addClass('on');
+    }
+});

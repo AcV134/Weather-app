@@ -15,8 +15,14 @@ app.get('/',(req,res)=>{
     res.render('index.ejs',{result:value});
 })
 
-app.get('/secret',(req,res)=>{
-    console.log(req.body);
+app.post('/search',async (req,res)=>{
+    try{
+        const result = await axios.get(`https://api.open-meteo.com/v1/forecast?latitude=${req.body.latitude}&longitude=${req.body.longitude}&current=temperature_2m,apparent_temperature,weather_code&hourly=temperature_2m,apparent_temperature,weather_code&daily=weather_code&timezone=auto#`);
+        let value = result.data;
+        res.render('index.ejs',{result:value});
+    }catch(error){
+        console.error(error);
+    }
 })
 
 app.listen(port,()=>{

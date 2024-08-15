@@ -6,3 +6,12 @@
 body{
     background-color: aqua;
 }
+
+.hour{
+    display:none;
+}
+
+.on{
+    display:flex;
+    overflow-x: auto;
+}
