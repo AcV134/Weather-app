@@ -1,169 +1,172 @@
 <%- include('partial/header') %>
-
-    <h1>Welcome to My Weather App</h1>
-    <p>Here you can check the weather for your location.</p>
     <% if (locals.result) { %>
-        <p>The temp <%=result.current.temperature_2m%> but feels like <%=result.current.apparent_temperature%>. The
-                    temperature is degrees Celsius. the weather code is <%=result.current.weather_code%>
-        </p>
-        <p>the next few days temperature and code is </p>
-        <div class="daily-container">
-            <% for( let i=0; i< result.daily.time.length; i++) {%>
-                <p class="dailyClick">temp= <%=result.daily.time[i]%> code= <%=result.daily.weather_code[i]%>
-                </p>
-                <%}%>
-        </div>
-        <div class="hour-container">
-            <div class="hour">
-                <p>time</p>
-                <% for( let i=0; i< 23; i++) {%>
-                    <div class="hour-minute">
-                        <p>
-                            <%=result.hourly.time[i]%>
-                        </p>
-                        <p>
-                            <%=result.hourly.temperature_2m[i]%>
-                        </p>
-                        <p>
-                            <%=result.hourly.apparent_temperature[i]%>
-                        </p>
-                        <p>
-                            <%=result.hourly.weather_code[i]%>
-                        </p>
-                    </div>
-                    <%}%>
-
+        <div class="content-page">
+            <div class="current-value">
+                <p>The temp in <%= locals.location%> is <%=result.current.temperature_2m%> but it feels like <%=result.current.apparent_temperature%>. The
+                    temperature is in degrees Celsius. the weather code is <%=result.current.weather_code%>
+                 </p>
             </div>
-
-            <div class="hour">
-                <p>time</p>
-                <% for( let i=24; i< 47; i++) {%>
-                    <div class="hour-minute">
-                        <p>
-                            <%=result.hourly.time[i]%>
-                        </p>
-                        <p>
-                            <%=result.hourly.temperature_2m[i]%>
-                        </p>
-                        <p>
-                            <%=result.hourly.apparent_temperature[i]%>
-                        </p>
-                        <p>
-                            <%=result.hourly.weather_code[i]%>
-                        </p>
-                    </div>
+            <p>the next few days temperature and code is </p>
+            <div class="daily-container">
+                <% for( let i=0; i< result.daily.time.length; i++) {%>
+                    <p class="dailyClick">temp= <%=result.daily.time[i]%> code= <%=result.daily.weather_code[i]%>
+                    </p>
                     <%}%>
-
             </div>
-
-            <div class="hour">
-                <p>time</p>
-                <% for( let i=48; i< 71; i++) {%>
-                    <div class="hour-minute">
-                        <p>
-                            <%=result.hourly.time[i]%>
-                        </p>
-                        <p>
-                            <%=result.hourly.temperature_2m[i]%>
-                        </p>
-                        <p>
-                            <%=result.hourly.apparent_temperature[i]%>
-                        </p>
-                        <p>
-                            <%=result.hourly.weather_code[i]%>
-                        </p>
-                    </div>
-                    <%}%>
-
+            <div class="hour-container">
+                <div class="hour">
+                    <p>time</p>
+                    <% for( let i=0; i< 23; i++) {%>
+                        <div class="hour-minute">
+                            <p>
+                                <%=result.hourly.time[i]%>
+                            </p>
+                            <p>
+                                <%=result.hourly.temperature_2m[i]%>
+                            </p>
+                            <p>
+                                <%=result.hourly.apparent_temperature[i]%>
+                            </p>
+                            <p>
+                                <%=result.hourly.weather_code[i]%>
+                            </p>
+                        </div>
+                        <%}%>
+    
+                </div>
+    
+                <div class="hour">
+                    <p>time</p>
+                    <% for( let i=24; i< 47; i++) {%>
+                        <div class="hour-minute">
+                            <p>
+                                <%=result.hourly.time[i]%>
+                            </p>
+                            <p>
+                                <%=result.hourly.temperature_2m[i]%>
+                            </p>
+                            <p>
+                                <%=result.hourly.apparent_temperature[i]%>
+                            </p>
+                            <p>
+                                <%=result.hourly.weather_code[i]%>
+                            </p>
+                        </div>
+                        <%}%>
+    
+                </div>
+    
+                <div class="hour">
+                    <p>time</p>
+                    <% for( let i=48; i< 71; i++) {%>
+                        <div class="hour-minute">
+                            <p>
+                                <%=result.hourly.time[i]%>
+                            </p>
+                            <p>
+                                <%=result.hourly.temperature_2m[i]%>
+                            </p>
+                            <p>
+                                <%=result.hourly.apparent_temperature[i]%>
+                            </p>
+                            <p>
+                                <%=result.hourly.weather_code[i]%>
+                            </p>
+                        </div>
+                        <%}%>
+    
+                </div>
+    
+                <div class="hour">
+                    <p>time</p>
+                    <% for( let i=72; i< 95; i++) {%>
+                        <div class="hour-minute">
+                            <p>
+                                <%=result.hourly.time[i]%>
+                            </p>
+                            <p>
+                                <%=result.hourly.temperature_2m[i]%>
+                            </p>
+                            <p>
+                                <%=result.hourly.apparent_temperature[i]%>
+                            </p>
+                            <p>
+                                <%=result.hourly.weather_code[i]%>
+                            </p>
+                        </div>
+                        <%}%>
+    
+                </div>
+    
+                <div class="hour">
+                    <p>time</p>
+                    <% for( let i=96; i< 119; i++) {%>
+                        <div class="hour-minute">
+                            <p>
+                                <%=result.hourly.time[i]%>
+                            </p>
+                            <p>
+                                <%=result.hourly.temperature_2m[i]%>
+                            </p>
+                            <p>
+                                <%=result.hourly.apparent_temperature[i]%>
+                            </p>
+                            <p>
+                                <%=result.hourly.weather_code[i]%>
+                            </p>
+                        </div>
+                        <%}%>
+    
+                </div>
+    
+                <div class="hour">
+                    <p>time</p>
+                    <% for( let i=120; i< 143; i++) {%>
+                        <div class="hour-minute">
+                            <p>
+                                <%=result.hourly.time[i]%>
+                            </p>
+                            <p>
+                                <%=result.hourly.temperature_2m[i]%>
+                            </p>
+                            <p>
+                                <%=result.hourly.apparent_temperature[i]%>
+                            </p>
+                            <p>
+                                <%=result.hourly.weather_code[i]%>
+                            </p>
+                        </div>
+                        <%}%>
+    
+                </div>
+    
+                <div class="hour">
+                    <p>time</p>
+                    <% for( let i=144; i< 167; i++) {%>
+                        <div class="hour-minute">
+                            <p>
+                                <%=result.hourly.time[i]%>
+                            </p>
+                            <p>
+                                <%=result.hourly.temperature_2m[i]%>
+                            </p>
+                            <p>
+                                <%=result.hourly.apparent_temperature[i]%>
+                            </p>
+                            <p>
+                                <%=result.hourly.weather_code[i]%>
+                            </p>
+                        </div>
+                        <%}%>
+    
+                </div>
+    
             </div>
-
-            <div class="hour">
-                <p>time</p>
-                <% for( let i=72; i< 95; i++) {%>
-                    <div class="hour-minute">
-                        <p>
-                            <%=result.hourly.time[i]%>
-                        </p>
-                        <p>
-                            <%=result.hourly.temperature_2m[i]%>
-                        </p>
-                        <p>
-                            <%=result.hourly.apparent_temperature[i]%>
-                        </p>
-                        <p>
-                            <%=result.hourly.weather_code[i]%>
-                        </p>
-                    </div>
-                    <%}%>
-
-            </div>
-
-            <div class="hour">
-                <p>time</p>
-                <% for( let i=96; i< 119; i++) {%>
-                    <div class="hour-minute">
-                        <p>
-                            <%=result.hourly.time[i]%>
-                        </p>
-                        <p>
-                            <%=result.hourly.temperature_2m[i]%>
-                        </p>
-                        <p>
-                            <%=result.hourly.apparent_temperature[i]%>
-                        </p>
-                        <p>
-                            <%=result.hourly.weather_code[i]%>
-                        </p>
-                    </div>
-                    <%}%>
-
-            </div>
-
-            <div class="hour">
-                <p>time</p>
-                <% for( let i=120; i< 143; i++) {%>
-                    <div class="hour-minute">
-                        <p>
-                            <%=result.hourly.time[i]%>
-                        </p>
-                        <p>
-                            <%=result.hourly.temperature_2m[i]%>
-                        </p>
-                        <p>
-                            <%=result.hourly.apparent_temperature[i]%>
-                        </p>
-                        <p>
-                            <%=result.hourly.weather_code[i]%>
-                        </p>
-                    </div>
-                    <%}%>
-
-            </div>
-
-            <div class="hour">
-                <p>time</p>
-                <% for( let i=144; i< 167; i++) {%>
-                    <div class="hour-minute">
-                        <p>
-                            <%=result.hourly.time[i]%>
-                        </p>
-                        <p>
-                            <%=result.hourly.temperature_2m[i]%>
-                        </p>
-                        <p>
-                            <%=result.hourly.apparent_temperature[i]%>
-                        </p>
-                        <p>
-                            <%=result.hourly.weather_code[i]%>
-                        </p>
-                    </div>
-                    <%}%>
-
-            </div>
-
         </div>
 
         <% }else{ %>
+            <h1>Welcome to My Weather App</h1>
+            <p>Here you can check the weather for your location.</p>
             <div class="total-container">
                 <form id="form" method="post" action="/search">
                     <div class="search-bar normal">

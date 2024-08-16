@@ -2,26 +2,20 @@
     font-size: 16px;
 }
 
-
+/* basic body specifications */
 body{
     margin: 0;
     padding: 0;
     height:100vh;
     width:100vw;
-    font-family: 'Poppins', sans-serif;
+    font-family: Segoe UI, Segoe WP, Arial, Sans-Serif;
     display: flex;
     flex-direction: column; 
     align-items: center;
 }
 
-.hour{
-    display:none;
-}
 
-.on{
-    display:flex;
-    overflow-x: auto;
-}
+/*-------------------------landing page-------------------------*/
 
 /* remove to make it nav search bar */
 .normal{
@@ -36,6 +30,7 @@ body{
     }
 }
 
+/* make for removing bug of search bar changing postion for options loading */
 .total-container{
     height: 13rem;
     display: flex;
@@ -44,13 +39,14 @@ body{
     align-items: center;
 }
 
+/* whole search bar including options */
 .search-bar{
     display: flex;
     flex-direction: column;
     width: 30rem;
     background-color: white;
     
-
+    /* search bar only */
     .search{
         width:3rem;
         display: flex;
@@ -60,7 +56,7 @@ body{
         height: 3rem;
         transition: width 0.5s ease-in-out,border-radius 0.5s ease-in-out,box-shadow 0.2s ease-in-out;
 
-
+        /* input area for search */
         .location{
             all: unset;
             display: none;
@@ -73,6 +69,7 @@ body{
             transition: display 0.3s ease-in-out;
         }
     
+        /* search button */
         button{
             width:3rem;
             border-radius: 0 50% 50% 0;
@@ -80,7 +77,7 @@ body{
             background-color: transparent;
             padding: 0.7rem;
 
-
+            /* search icon */
             svg{
                 width: 100%;
                 height: 100%;
@@ -88,6 +85,7 @@ body{
             }
         }
 
+        /* button on hover */
         button:hover{
             background-color: rgba(90,200,250);
             svg{
@@ -96,6 +94,7 @@ body{
         }
     }
 
+    /* search bar on hover */
     .search:hover{
         width:100%;
         border-radius: 5rem;
@@ -105,8 +104,7 @@ body{
         }
     }
 
-
-
+    /* container for the options */
     .options{
         position: relative;
         display: flex;
@@ -117,6 +115,7 @@ body{
         overflow-y: auto;
         overflow-x: hidden;
 
+        /* options displayed */
         .option{
             position: relative;
             height:1rem;
@@ -124,11 +123,13 @@ body{
             padding:1rem;
             border-bottom: 1px solid rgba(90,200,250);
 
+            /* location name */
             .name{
                 margin-right:auto;
             }
         }
 
+        /* option on hover */
         .option:hover{
             background-color: rgba(90,200,250);
             color:white;
@@ -151,6 +152,7 @@ body{
 
 }
 
+/* when search bar is selected */
 .click {
     border:2px solid rgba(90,200,250);
     border-radius: 2rem;
@@ -167,10 +169,13 @@ body{
 
 }
 
+/* to remove search box shadow when options load */
 .border{
     box-shadow: 0px 0px 0px  !important;
 }
 
+
+/*-------------------------header-------------------------*/
 
 header{
     min-width: 100vw;
@@ -179,6 +184,7 @@ header{
     height: 3rem;
     top:0;
 
+    /* for the nav bar */
     .nav-bar{
         width:31rem;
         display: flex;
@@ -188,4 +194,18 @@ header{
             position: absolute !important;
         }
     }
+}
+
+
+/*-------------------------content page-------------------------*/
+
+/* for hour container to be hidden */
+.hour{
+    display:none;
+}
+
+/* on select, for hour container to be displayed */
+.on{
+    display:flex;
+    overflow-x: auto;
 }

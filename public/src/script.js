@@ -2,12 +2,17 @@
 let latitude;
 let longitude;
 
+// when input is given in the location field, the following code will run
 $(".location").on("input", async function(event) {
     try{
         const result = await axios.get(`https://geocoding-api.open-meteo.com/v1/search?name=${event.target.value}&count=10&language=en&format=json`);
         const location = (result.data).results;
+
+        // to remove previous options
         $(".options").empty();
         $('.search').removeClass('border');
+
+        // append the result to options
         location.forEach(function(location){
             $($('.click').children(".options")).append(`
                 <div class="option" value="${location.latitude} ${location.longitude}">
@@ -16,16 +21,18 @@ $(".location").on("input", async function(event) {
                 </div>
                 `);
         });
+
+        // if options are present, add border to search-(will remove box-shadow)
         if($($('.click').children(".options")).children().length > 0){
             $($('.click').children(".search")).addClass('border');
         }
     }catch(error){
         console.error(error);
     }
-    console.log(event.target.value);
 });
 
 
+// on selecting an option, the following code will run
 $(document).on('click','.option',(e)=>{
     const content = e.target.closest('.option');
     let values = content.getAttribute("value").split(" ");
@@ -36,6 +43,7 @@ $(document).on('click','.option',(e)=>{
     $('.search').removeClass('border');
 })
 
+// on selecting a daily time, the correspoding hour results will be displayed
 $('.dailyClick').on('click',(e)=>{
     console.log($(e.target).index());
     let index = $(e.target).index();
@@ -49,10 +57,12 @@ $('.dailyClick').on('click',(e)=>{
     }
 });
 
+// on clicking the search bar, the following code will run
 $('.search-bar').on('click',(e)=>{
     $((e.target).closest('.search-bar')).addClass('click');
 })
 
+// on clicking outside the search bar, the following code will run-(to remove click if input is empty)
 $(document).on('click', function(e) {
     if(!$(e.target).closest('.search-bar')[0]){
         if ($('.location').val() === '') {
@@ -61,6 +71,7 @@ $(document).on('click', function(e) {
     }
 });
 
+// if location is empty search button will act as part of search bar
 $('form').on('submit', function(event) {
     if ($('.location').val() === ''){
         event.preventDefault();
