@@ -15,3 +15,29 @@ body{
     display:flex;
     overflow-x: auto;
 }
+
+form{
+    display: flex;
+
+    #options{
+        background-color: red;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-height: 8rem;
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        .option{
+            background-color: yellow;
+            height:1rem;
+            display: flex;
+            padding:5px;
+
+            .name{
+                margin-right:auto;
+            }
+        }
+    }
+}

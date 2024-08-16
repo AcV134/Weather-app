@@ -114,13 +114,17 @@
     <% }else{ %>
     <form id="form" method="post" action="/search">
         <label for="location">Enter your location:</label>
-        <input type="text" id="location" name="location">
+        <div class="search-bar">
+            <div class="search">
+                <input type="text" id="location" name="location">
+                <button type="submit">Get Weather</button>
+            </div>
+            <div id="options">
+            </div>
+        </div>
         <input type="hidden" id="latitude" name="latitude">
         <input type="hidden" id="longitude" name="longitude">
-        <button type="submit">Get Weather</button>
     </form>
-    <div id="options">
-    </div>
     <% } %>
     
     <div id="weather-info">

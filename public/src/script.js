@@ -8,7 +8,12 @@ $("#location").on("input", async function(event) {
         const location = (result.data).results;
         $("#options").empty();
         location.forEach(function(location){
-            $("#options").append(`<option value="${location.latitude} ${location.longitude}">${location.name}, ${location.country}</option>`);
+            $("#options").append(`
+                <div class="option" value="${location.latitude} ${location.longitude}">
+                <div class="name">${location.name}</div>
+                <div class="country">${location.country}</div>
+                </div>
+                `);
         });
     }catch(error){
         console.error(error);
@@ -17,11 +22,12 @@ $("#location").on("input", async function(event) {
 });
 
 
-$("#options").on('click',(e)=>{
-    let values = e.target.value.split(" ");
+$(document).on('click','.option',(e)=>{
+    const content = e.target.closest('.option');
+    let values = content.getAttribute("value").split(" ");
     $("#latitude").val(values[0]);
     $("#longitude").val(values[1]);
-    $("#location").val(e.target.innerHTML);
+    $("#location").val($(content).children('.name')[0].innerHTML);
     $("#options").empty();
 })
 
