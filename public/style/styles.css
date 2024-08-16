@@ -6,6 +6,8 @@
 body{
     margin: 0;
     padding: 0;
+    height:100vh;
+    width:100vw;
     font-family: 'Poppins', sans-serif;
     display: flex;
     justify-content: center;
@@ -22,7 +24,7 @@ body{
     overflow-x: auto;
 }
 
-
+/* remove to make it nav search bar */
 .normal{
     width: 40rem !important;
     .search{
