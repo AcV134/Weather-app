@@ -2,22 +2,22 @@
 let latitude;
 let longitude;
 
-$("#location").on("input", async function(event) {
+$(".location").on("input", async function(event) {
     try{
         const result = await axios.get(`https://geocoding-api.open-meteo.com/v1/search?name=${event.target.value}&count=10&language=en&format=json`);
         const location = (result.data).results;
-        $("#options").empty();
+        $(".options").empty();
         $('.search').removeClass('border');
         location.forEach(function(location){
-            $("#options").append(`
+            $($('.click').children(".options")).append(`
                 <div class="option" value="${location.latitude} ${location.longitude}">
                 <div class="name">${location.name}</div>
                 <div class="country">${location.country}</div>
                 </div>
                 `);
         });
-        if($("#options").children().length > 0){
-            $('.search').addClass('border');
+        if($($('.click').children(".options")).children().length > 0){
+            $($('.click').children(".search")).addClass('border');
         }
     }catch(error){
         console.error(error);
@@ -29,10 +29,10 @@ $("#location").on("input", async function(event) {
 $(document).on('click','.option',(e)=>{
     const content = e.target.closest('.option');
     let values = content.getAttribute("value").split(" ");
-    $("#latitude").val(values[0]);
-    $("#longitude").val(values[1]);
-    $("#location").val($(content).children('.name')[0].innerHTML);
-    $("#options").empty();
+    $(".latitude").val(values[0]);
+    $(".longitude").val(values[1]);
+    $(".location").val($(content).children('.name')[0].innerHTML);
+    $(".options").empty();
     $('.search').removeClass('border');
 })
 
@@ -55,8 +55,15 @@ $('.search-bar').on('click',(e)=>{
 
 $(document).on('click', function(e) {
     if(!$(e.target).closest('.search-bar')[0]){
-        if ($('#location').val() === '') {
+        if ($('.location').val() === '') {
             $('.search-bar').removeClass('click');
         }
+    }
+});
+
+$('form').on('submit', function(event) {
+    if ($('.location').val() === ''){
+        event.preventDefault();
+        $(e.target).closest('.search-bar').addClass('click');        
     }
 });

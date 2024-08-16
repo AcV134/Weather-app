@@ -1,14 +1,5 @@
-<!DOCTYPE html>
-<html>
+<%- include('partial/header') %>
 
-<head>
-    <title>My Weather App</title>
-    <link rel="stylesheet" type="text/css" href="style/styles.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-</head>
-
-<body>
     <h1>Welcome to My Weather App</h1>
     <p>Here you can check the weather for your location.</p>
     <% if (locals.result) { %>
@@ -177,7 +168,7 @@
                 <form id="form" method="post" action="/search">
                     <div class="search-bar normal">
                         <div class="search">
-                            <input type="text" id="location" name="location" placeholder="Enter your location">
+                            <input type="text" class="location" name="location" placeholder="Enter your location">
                             <button type="submit">
                                 <svg xmlns="http://www.w3.org/2000/svg"
                                     viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
@@ -186,11 +177,11 @@
                                 </svg>
                             </button>
                         </div>
-                        <div id="options">
+                        <div class="options">
                         </div>
                     </div>
-                    <input type="hidden" id="latitude" name="latitude">
-                    <input type="hidden" id="longitude" name="longitude">
+                    <input type="hidden" class="latitude" name="latitude">
+                    <input type="hidden" class="longitude" name="longitude">
                 </form>
             </div>
 
