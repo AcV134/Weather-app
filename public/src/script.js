@@ -7,6 +7,7 @@ $("#location").on("input", async function(event) {
         const result = await axios.get(`https://geocoding-api.open-meteo.com/v1/search?name=${event.target.value}&count=10&language=en&format=json`);
         const location = (result.data).results;
         $("#options").empty();
+        $('.search').removeClass('border');
         location.forEach(function(location){
             $("#options").append(`
                 <div class="option" value="${location.latitude} ${location.longitude}">
@@ -15,6 +16,9 @@ $("#location").on("input", async function(event) {
                 </div>
                 `);
         });
+        if($("#options").children().length > 0){
+            $('.search').addClass('border');
+        }
     }catch(error){
         console.error(error);
     }
@@ -29,6 +33,7 @@ $(document).on('click','.option',(e)=>{
     $("#longitude").val(values[1]);
     $("#location").val($(content).children('.name')[0].innerHTML);
     $("#options").empty();
+    $('.search').removeClass('border');
 })
 
 $('.dailyClick').on('click',(e)=>{
@@ -41,5 +46,17 @@ $('.dailyClick').on('click',(e)=>{
     else{
         $('.hour').siblings().removeClass('on');
         $(container).addClass('on');
+    }
+});
+
+$('.search-bar').on('click',(e)=>{
+    $((e.target).closest('.search-bar')).addClass('click');
+})
+
+$(document).on('click', function(e) {
+    if(!$(e.target).closest('.search-bar')[0]){
+        if ($('#location').val() === '') {
+            $('.search-bar').removeClass('click');
+        }
     }
 });
