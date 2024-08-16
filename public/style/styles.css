@@ -16,8 +16,57 @@ body{
     overflow-x: auto;
 }
 
-form{
+.search-bar{
     display: flex;
+    flex-direction: column;
+    width: 30rem;
+
+    .search{
+        width:3rem;
+        display: flex;
+        border-radius: 50%;
+        box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+        background-color: white;
+        height: 3rem;
+        transition: all 0.5s ease-in-out;
+
+
+        #location{
+            display: none;
+            width:calc(100% - 3rem);
+            border-top-left-radius: 5rem;
+            border-bottom-left-radius: 5rem;
+            border:none;
+            padding: 0.5rem;
+            background-color: transparent;
+            transition: all 0.5s ease-in-out;
+        }
+    
+        button{
+            width:3rem;
+            border-radius: 50%;
+            border: none;
+            background-color: transparent;
+            padding: 0.7rem;
+            transition: all 0.5s ease-in-out;
+
+
+            svg{
+                width: 100%;
+                height: 100%;
+                fill:rgba(90,200,250);
+            }
+        }
+    }
+
+    .search:hover{
+        width:100%;
+        border-radius: 5rem;
+
+        #location{
+            display: flex;
+        }
+    }
 
     #options{
         background-color: red;
@@ -25,7 +74,7 @@ form{
         display: flex;
         flex-direction: column;
         width: 100%;
-        max-height: 8rem;
+        max-height: 10rem;
         overflow-y: auto;
         overflow-x: hidden;
 
