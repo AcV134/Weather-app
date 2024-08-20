@@ -313,10 +313,11 @@ header{
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: center;
             border-left: 0.1rem solid var(--primary-color);
+            align-items: center;
             padding: 0.5rem;
             backdrop-filter: blur(0.5rem);
+            transition: all 0.3s ease-in-out;
         }
 
         .hour-weather:first-child{
@@ -344,7 +345,6 @@ header{
 }
 
 .hour-container::-webkit-scrollbar-thumb {
-    background-color: var(--primary-color);
     border-radius: 1rem;
     width: 2rem;
 }
