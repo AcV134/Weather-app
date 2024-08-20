@@ -3,6 +3,7 @@
     --primary-color:rgba(0, 122, 255,0.9);
     --secondary-color:rgba(0,0,0,0.9);
     --tertiary-color:rgba(255,255,255,1);
+    --quaternary-color:rgba(255,255,0,1);
 }
 
 /* basic body specifications */
@@ -225,10 +226,11 @@ header{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: var(--primary-color);
+    border:0.2rem solid var(--quaternary-color);
 
     .current-location{
         font-size: 2rem;
+        font-weight: 100;
     }
     
     .current-weather{
@@ -241,7 +243,7 @@ header{
 
         .current-temp{
             font-size: 5rem;    
-            font-weight: 200; 
+            font-weight: 100; 
         }
     }
 }
@@ -258,7 +260,8 @@ header{
         width: 100%;
         height: 100%;
         fill:transparent;
-        stroke: yellow;
+        stroke: var(--quaternary-color);
         stroke-width: 1.5rem;
+        padding: 0.2rem;
     }
 }
