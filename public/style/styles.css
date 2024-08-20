@@ -19,6 +19,7 @@ body{
     align-items: center;
     background-color: var(--secondary-color);
     color: var(--tertiary-color);
+    overflow-x: hidden;
     
 }
 
@@ -122,6 +123,7 @@ body{
         max-height: 10rem;
         overflow-y: auto;
         overflow-x: hidden;
+        backdrop-filter: blur(0.5rem);
 
         /* options displayed */
         .option{
@@ -208,16 +210,7 @@ header{
 
 /*-------------------------content page-------------------------*/
 
-/* for hour container to be hidden */
-.hour{
-    display:none;
-}
 
-/* on select, for hour container to be displayed */
-.on{
-    display:flex;
-    overflow-x: auto;
-}
 
 .current-container{
     margin-top:5rem;
@@ -300,3 +293,70 @@ header{
         padding: 0.2rem;
     }
 }
+
+.hour-container{
+    width: 80vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    overflow-x: auto;
+    border: 0.1rem solid var(--primary-color);
+    border-radius: 2rem;
+    padding: 0.3rem;
+
+    .hour{
+        display:none;
+        margin:0.3rem;
+
+        .hour-weather{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-left: 0.1rem solid var(--primary-color);
+            padding: 0.5rem;
+            backdrop-filter: blur(0.5rem);
+        }
+
+        .hour-weather:first-child{
+            margin-left:76.5rem;
+            border-left: none;
+        }
+
+        .hour-weather:hover{
+            background-color: var(--primary-color);
+            color: var(--tertiary-color);
+
+            svg{
+                stroke: var(--tertiary-color);
+            }
+        }
+    }
+
+    .on{
+        display:flex !important;
+    }
+}
+
+.hour-container::-webkit-scrollbar {
+    height: 0.5rem;
+}
+
+.hour-container::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+    border-radius: 1rem;
+    width: 2rem;
+}
+
+
+body::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+    border-radius: 1rem;
+    width: 0.1rem;
+}
+

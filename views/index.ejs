@@ -147,148 +147,78 @@
                         <%}%>
                 </div>
                 <div class="hour-container">
-                    <div class="hour">
-                        <p>time</p>
+                    <div class="hour on">
                         <% for( let i=0; i< 23; i++) {%>
-                            <div class="hour-minute">
-                                <p>
-                                    <%=result.hourly.time[i]%>
-                                </p>
-                                <p>
-                                    <%=result.hourly.temperature_2m[i]%>
-                                </p>
-                                <p>
-                                    <%=result.hourly.apparent_temperature[i]%>
-                                </p>
-                                <p>
-                                    <%=result.hourly.weather_code[i]%>
-                                </p>
+                            <div class="hour-weather">
+                                <div class="hour-time"><%=(result.hourly.time[i]).split('T')[1]%></div>
+                                <div class="icon"><%-svg_icons[result.hourly.weather_code[i]]%></div>
+                                <div class="hour-temp"> <%=result.hourly.temperature_2m[i]%> °C</div>
                             </div>
                             <%}%>
 
                     </div>
 
                     <div class="hour">
-                        <p>time</p>
                         <% for( let i=24; i< 47; i++) {%>
-                            <div class="hour-minute">
-                                <p>
-                                    <%=result.hourly.time[i]%>
-                                </p>
-                                <p>
-                                    <%=result.hourly.temperature_2m[i]%>
-                                </p>
-                                <p>
-                                    <%=result.hourly.apparent_temperature[i]%>
-                                </p>
-                                <p>
-                                    <%=result.hourly.weather_code[i]%>
-                                </p>
+                            <div class="hour-weather">
+                                <div class="hour-time"><%=(result.hourly.time[i]).split('T')[1]%></div>
+                                <div class="icon"><%-svg_icons[result.hourly.weather_code[i]]%></div>
+                                <div class="hour-temp"> <%=result.hourly.temperature_2m[i]%> °C</div>
                             </div>
                             <%}%>
 
                     </div>
 
                     <div class="hour">
-                        <p>time</p>
                         <% for( let i=48; i< 71; i++) {%>
-                            <div class="hour-minute">
-                                <p>
-                                    <%=result.hourly.time[i]%>
-                                </p>
-                                <p>
-                                    <%=result.hourly.temperature_2m[i]%>
-                                </p>
-                                <p>
-                                    <%=result.hourly.apparent_temperature[i]%>
-                                </p>
-                                <p>
-                                    <%=result.hourly.weather_code[i]%>
-                                </p>
+                            <div class="hour-weather">
+                                <div class="hour-time"><%=(result.hourly.time[i]).split('T')[1]%></div>
+                                <div class="icon"><%-svg_icons[result.hourly.weather_code[i]]%></div>
+                                <div class="hour-temp"> <%=result.hourly.temperature_2m[i]%> °C</div>
                             </div>
                             <%}%>
 
                     </div>
 
                     <div class="hour">
-                        <p>time</p>
                         <% for( let i=72; i< 95; i++) {%>
-                            <div class="hour-minute">
-                                <p>
-                                    <%=result.hourly.time[i]%>
-                                </p>
-                                <p>
-                                    <%=result.hourly.temperature_2m[i]%>
-                                </p>
-                                <p>
-                                    <%=result.hourly.apparent_temperature[i]%>
-                                </p>
-                                <p>
-                                    <%=result.hourly.weather_code[i]%>
-                                </p>
+                            <div class="hour-weather">
+                                <div class="hour-time"><%=(result.hourly.time[i]).split('T')[1]%></div>
+                                <div class="icon"><%-svg_icons[result.hourly.weather_code[i]]%></div>
+                                <div class="hour-temp"> <%=result.hourly.temperature_2m[i]%> °C</div>
                             </div>
                             <%}%>
 
                     </div>
 
                     <div class="hour">
-                        <p>time</p>
                         <% for( let i=96; i< 119; i++) {%>
-                            <div class="hour-minute">
-                                <p>
-                                    <%=result.hourly.time[i]%>
-                                </p>
-                                <p>
-                                    <%=result.hourly.temperature_2m[i]%>
-                                </p>
-                                <p>
-                                    <%=result.hourly.apparent_temperature[i]%>
-                                </p>
-                                <p>
-                                    <%=result.hourly.weather_code[i]%>
-                                </p>
+                            <div class="hour-weather">
+                                <div class="hour-time"><%=(result.hourly.time[i]).split('T')[1]%></div>
+                                <div class="icon"><%-svg_icons[result.hourly.weather_code[i]]%></div>
+                                <div class="hour-temp"> <%=result.hourly.temperature_2m[i]%> °C</div>
                             </div>
                             <%}%>
 
                     </div>
 
                     <div class="hour">
-                        <p>time</p>
                         <% for( let i=120; i< 143; i++) {%>
-                            <div class="hour-minute">
-                                <p>
-                                    <%=result.hourly.time[i]%>
-                                </p>
-                                <p>
-                                    <%=result.hourly.temperature_2m[i]%>
-                                </p>
-                                <p>
-                                    <%=result.hourly.apparent_temperature[i]%>
-                                </p>
-                                <p>
-                                    <%=result.hourly.weather_code[i]%>
-                                </p>
+                            <div class="hour-weather">
+                                <div class="hour-time"><%=(result.hourly.time[i]).split('T')[1]%></div>
+                                <div class="icon"><%-svg_icons[result.hourly.weather_code[i]]%></div>
+                                <div class="hour-temp"> <%=result.hourly.temperature_2m[i]%> °C</div>
                             </div>
                             <%}%>
 
                     </div>
 
                     <div class="hour">
-                        <p>time</p>
                         <% for( let i=144; i< 167; i++) {%>
-                            <div class="hour-minute">
-                                <p>
-                                    <%=result.hourly.time[i]%>
-                                </p>
-                                <p>
-                                    <%=result.hourly.temperature_2m[i]%>
-                                </p>
-                                <p>
-                                    <%=result.hourly.apparent_temperature[i]%>
-                                </p>
-                                <p>
-                                    <%=result.hourly.weather_code[i]%>
-                                </p>
+                            <div class="hour-weather">
+                                <div class="hour-time"><%=(result.hourly.time[i]).split('T')[1]%></div>
+                                <div class="icon"><%-svg_icons[result.hourly.weather_code[i]]%></div>
+                                <div class="hour-temp"> <%=result.hourly.temperature_2m[i]%> °C</div>
                             </div>
                             <%}%>
 

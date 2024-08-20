@@ -48,6 +48,7 @@ $('.daily-weather').on('click',(e)=>{
     console.log($(e.target).closest('.daily-weather').index());
     let index = $(e.target).closest('.daily-weather').index();
     let container = ($('.hour-container').children())[index];
+    console.log(container);
     if($(container).hasClass('on')){
         $(container).removeClass('on');
     }
