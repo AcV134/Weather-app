@@ -225,6 +225,8 @@ header{
     .current-location{
         font-size: 2rem;
         font-weight: 100;
+        animation: come 0.7s ease-in;
+
     }
     
     .current-weather{
@@ -234,11 +236,26 @@ header{
         justify-content: center;
         align-items: center;
         height: 5rem;
+        animation: come 0.7s ease-in;
+
 
         .current-temp{
             font-size: 5rem;    
             font-weight: 100; 
+            animation: come 0.7s ease-in;
+
         }
+    }
+}
+
+@keyframes come{
+    0%{
+        opacity:0;
+        transform:translateY(5rem);
+    }
+    100%{
+        opacity:1;
+        transform:translateY(0rem);
     }
 }
 
@@ -252,6 +269,35 @@ header{
     border:0.2rem solid var(--primary-color);
     margin:3rem;
 
+    .daily-whole{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 2rem;
+        animation: come 1s ease-in;
+
+
+        .arrow{
+            height:2rem;
+            width:2rem;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease-in-out;
+
+
+            svg{
+                width: 100%;
+                height: 100%;
+                fill:transparent;
+                stroke: var(--quaternary-color);
+                stroke-width: 1.5rem;
+                padding: 0.2rem;
+            }
+        }
+    }
+
     .daily-weather{
         padding: 1rem;
         display: flex;
@@ -261,8 +307,9 @@ header{
         border: 0.1rem solid var(--quaternary-color);
         border-radius: 2rem;
         margin:0.3rem;
-        background-color:  rgba(255,255,255,0.1);
+        background-color: rgba(255,0,255,0.1);
         backdrop-filter: blur(0.5rem);
+        transition: all 0.3s ease-in-out;
 
     }
 
@@ -301,13 +348,15 @@ header{
     justify-content: center;
     align-items: center;
     overflow-x: auto;
-    border: 0.1rem solid var(--primary-color);
     border-radius: 2rem;
     padding: 0.3rem;
+    transition: all 0.3s ease-in-out;
+
 
     .hour{
         display:none;
         margin:0.3rem;
+        transition: all 0.3s ease-in-out;
 
         .hour-weather{
             display: flex;
@@ -334,13 +383,17 @@ header{
             }
         }
     }
-
-    .on{
-        display:flex !important;
-    }
 }
 
-.hour-container::-webkit-scrollbar {
+.on{
+    display:flex !important;
+}
+
+.select{
+    border: 0.1rem solid var(--primary-color);
+}
+
+.hour-container::-webkit-scrollbar{
     height: 0.5rem;
 }
 
@@ -348,7 +401,6 @@ header{
     border-radius: 1rem;
     width: 2rem;
 }
-
 
 body::-webkit-scrollbar {
     width: 0.5rem;

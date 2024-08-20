@@ -44,17 +44,23 @@ $(document).on('click','.option',(e)=>{
 })
 
 // on selecting a daily time, the correspoding hour results will be displayed
-$('.daily-weather').on('click',(e)=>{
-    console.log($(e.target).closest('.daily-weather').index());
-    let index = $(e.target).closest('.daily-weather').index();
+$('.daily-whole').on('click',(e)=>{
+    console.log($(e.target).closest('.daily-whole').index());
+    let index = $(e.target).closest('.daily-whole').index();
     let container = ($('.hour-container').children())[index];
-    console.log(container);
+    let arrow = $(e.target).closest('.daily-whole').children('.arrow');
+    console.log(arrow);
     if($(container).hasClass('on')){
         $(container).removeClass('on');
+        $(arrow).removeClass('on');
+        $('.hour-container').removeClass('select');
     }
     else{
         $('.hour').siblings().removeClass('on');
+        $('.arrow').removeClass('on');
         $(container).addClass('on');
+        $(arrow).addClass('on');
+        $('.hour-container').addClass('select');
     }
 });
 
