@@ -2,37 +2,6 @@
 let latitude;
 let longitude;
 
-let svg_icons = {
-    0: 'sun.svg',
-    1: 'sun.svg',
-    2: "cloud-sun.svg",
-    3: "cloud.svg",
-    45: "fog.svg",
-    48: "fog.svg",
-    51: "cloud-sun-rain.svg",
-    53: "cloud-sun-rain.svg",
-    55: "cloud-sun-rain.svg",
-    56: "rain.svg",
-    57: "rain.svg",
-    61: "cloud-sun-rain.svg",
-    63: "rain.svg",
-    65: "rain-heavy.svg",
-    66: "rain.svg",
-    67: "rain.svg",
-    71: "snow.svg",
-    73: "snow.svg",
-    75: "snow.svg",
-    77: "snow.svg",
-    80: "cloud-sun-rain.svg",
-    81: "rain.svg",
-    82: "rain-heavy.svg",
-    85: "snow.svg",
-    86: "snow.svg",
-    95: "cloud-bold.svg",
-    96: "cloud-bold.svg",
-    99: "cloud-bold.svg",
-}
-
 // when input is given in the location field, the following code will run
 $(".location").on("input", async function(event) {
     try{
@@ -75,9 +44,9 @@ $(document).on('click','.option',(e)=>{
 })
 
 // on selecting a daily time, the correspoding hour results will be displayed
-$('.dailyClick').on('click',(e)=>{
-    console.log($(e.target).index());
-    let index = $(e.target).index();
+$('.daily-weather').on('click',(e)=>{
+    console.log($(e.target).closest('.daily-weather').index());
+    let index = $(e.target).closest('.daily-weather').index();
     let container = ($('.hour-container').children())[index];
     if($(container).hasClass('on')){
         $(container).removeClass('on');

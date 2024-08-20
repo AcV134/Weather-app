@@ -220,6 +220,7 @@ header{
 }
 
 .current-container{
+    margin-top:5rem;
     display:flex;
     border-radius: 2rem;
     padding: 1rem;
@@ -244,6 +245,40 @@ header{
         .current-temp{
             font-size: 5rem;    
             font-weight: 100; 
+        }
+    }
+}
+
+.daily-container{
+    display:flex;
+    border-radius: 2rem;
+    flex-direction: row;
+    padding:0.2rem;
+    justify-content: center;
+    align-items: center;
+    border:0.2rem solid var(--primary-color);
+    margin:3rem;
+
+    .daily-weather{
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: 0.1rem solid var(--quaternary-color);
+        border-radius: 2rem;
+        margin:0.3rem;
+        background-color:  rgba(255,255,255,0.1);
+        backdrop-filter: blur(0.5rem);
+
+    }
+
+    .daily-weather:hover{
+        background-color: var(--primary-color);
+        color: var(--tertiary-color);
+
+        svg{
+            stroke: var(--tertiary-color);
         }
     }
 }
